@@ -1,22 +1,127 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-<mat-card>
-  <mat-card-title>first card</mat-card-title>
-</mat-card>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar i18n>Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description i18n>
+              Standard
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-action-row fxLayoutAlign="start center">
+            <mat-icon>account_circle</mat-icon>
+            <button mat-button>first</button>
+          </mat-action-row>
+          <mat-action-row fxLayoutAlign="start center">
+            <mat-icon>account_circle</mat-icon>
+            <button mat-button>second</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+              高级设置
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-action-row fxLayoutAlign="start center">
+            <mat-icon>account_circle</mat-icon>
+            <button mat-button>first</button>
+          </mat-action-row>
+          <mat-action-row fxLayoutAlign="start center">
+            <mat-icon>account_circle</mat-icon>
+            <button mat-button>second</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+              升级扩展
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-action-row fxLayoutAlign="start center">
+            <mat-icon>account_circle</mat-icon>
+            <button mat-button>first</button>
+          </mat-action-row>
+          <mat-action-row fxLayoutAlign="start center">
+            <mat-icon>account_circle</mat-icon>
+            <button mat-button>second</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxFlex fxFlexFill fxLayout="row" fxLayoutAlign="start center">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+      </div>
+
+      <mat-divider [vertical]="true"></mat-divider>
+      <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+
+      </div>
+      <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+        <button mat-button routerLink="officialAccount">
+          <mat-icon>account_balance</mat-icon>
+          公众号
+        </button>
+        <button mat-button routerLink="miniProgram">
+          <mat-icon>account_box</mat-icon>
+          小程序
+        </button>
+        <button mat-button routerLink="standard">
+          <mat-icon>extension</mat-icon>
+          基础设置
+        </button>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>dashboard</mat-icon>
+          菜单
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>切换账号</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>message</mat-icon>
+            <span>新消息</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>退出</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
