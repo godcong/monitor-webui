@@ -1,3 +1,8 @@
+<!--<div class="colorNested box" style="height: auto;">-->
+<!--<div class="wrapper">-->
+<!--<div class="box header">Header</div>-->
+<!--<div class="box" gdArea="sidebar">Sidebar</div>-->
+<!--<div class="box content" style="position: relative;">-->
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -14,12 +19,22 @@
             <mat-panel-description i18n>Standard</mat-panel-description>
           </mat-expansion-panel-header>
           <mat-action-row fxLayoutAlign="start center">
-            <mat-icon>account_circle</mat-icon>
-            <button mat-button>first</button>
+            <button mat-button>
+              <mat-icon>account_circle</mat-icon>
+              <a>first</a>
+            </button>
           </mat-action-row>
           <mat-action-row fxLayoutAlign="start center">
-            <mat-icon>account_circle</mat-icon>
-            <button mat-button>second</button>
+            <button mat-button>
+              <mat-icon>account_circle</mat-icon>
+              <a>first</a>
+            </button>
+          </mat-action-row>
+          <mat-action-row fxLayoutAlign="start center">
+            <button mat-button>
+              <mat-icon>account_circle</mat-icon>
+              <a>first</a>
+            </button>
           </mat-action-row>
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true"
@@ -61,7 +76,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div fxFlex fxFlexFill fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">
         <button
           type="button"
           aria-label="Toggle sidenav"
@@ -70,43 +85,32 @@
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-
       </div>
 
       <mat-divider [vertical]="true"></mat-divider>
-      <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
-
+      <div fxFlex="0 1 auto" fxLayoutAlign="center center">
       </div>
-      <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
-        <button mat-button routerLink="officialAccount">
+      <div fxFlex="0 1 auto" fxLayoutAlign="end center">
+        <button mat-button routerLink="cluster">
           <mat-icon>account_balance</mat-icon>
-          菜单1
-        </button>
-        <button mat-button routerLink="miniProgram">
-          <mat-icon>account_box</mat-icon>
-          菜单2
-        </button>
-        <button mat-button routerLink="standard">
-          <mat-icon>extension</mat-icon>
-          菜单3
+          <a i18n>Cluster</a>
         </button>
         <button mat-button [matMenuTriggerFor]="menu">
           <mat-icon>dashboard</mat-icon>
-          4
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
             <mat-icon>account_circle</mat-icon>
-            <span>切换账号</span>
+            <span i18n>Change Account</span>
           </button>
           <button mat-menu-item>
             <mat-icon>message</mat-icon>
-            <span>新消息</span>
+            <span i18n>New Message</span>
           </button>
           <mat-divider></mat-divider>
           <button mat-menu-item>
             <mat-icon>exit_to_app</mat-icon>
-            <span>退出</span>
+            <span i18n>Logout</span>
           </button>
         </mat-menu>
       </div>
@@ -117,5 +121,10 @@
   </mat-sidenav-content>
 
 </mat-sidenav-container>
+
+<!--</div>-->
+<!--<div class="box footer">Footer</div>-->
+<!--</div>-->
+<!--</div>-->
 
 

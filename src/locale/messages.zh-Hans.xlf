@@ -22,6 +22,23 @@
         <source>Extended</source>
         <target>升级扩展</target>
       </trans-unit>
+      <trans-unit id="f4d1dd59b039ad818d9da7e29a773e10e41d9821" datatype="html">
+        <source>Cluster</source>
+        <target>集群控制</target>
+      </trans-unit>
+      <trans-unit id="0cfeea1196e12d86876317139d49ccb07c4ba778" datatype="html">
+        <source>Change Account</source>
+        <target>切换账户</target>
+      </trans-unit>
+      <trans-unit id="0a7e151f39aed3606309966e3bb493e721735b1d" datatype="html">
+        <source>New Message</source>
+        <target>新消息</target>
+      </trans-unit>
+      <trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
+        <source>Logout</source>
+        <target>退出登录</target>
+
+      </trans-unit>
     </body>
   </file>
 </xliff>

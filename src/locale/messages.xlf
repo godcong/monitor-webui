@@ -6,28 +6,56 @@
         <source>Menu</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="55d2c659d583048ef273f0d8b69fd38e2c09a500" datatype="html">
         <source>Standard</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="bc2e854e111ecf2bd7db170da5e3c2ed08181d88" datatype="html">
         <source>Advanced</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="58a1f276b7148bf31684500131ac0070423f7d6d" datatype="html">
         <source>Extended</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4d1dd59b039ad818d9da7e29a773e10e41d9821" datatype="html">
+        <source>Cluster</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0cfeea1196e12d86876317139d49ccb07c4ba778" datatype="html">
+        <source>Change Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0a7e151f39aed3606309966e3bb493e721735b1d" datatype="html">
+        <source>New Message</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
     </body>

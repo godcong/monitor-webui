@@ -3,6 +3,7 @@ import {LOCALE_ID, NgModule} from '@angular/core';
 import localeZh from '@angular/common/locales/zh-Hans';
 import {registerLocaleData} from '@angular/common';
 import {AppComponent} from './app.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
@@ -16,6 +17,7 @@ import {
 import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from '@angular/cdk/layout';
 import {FormsModule} from '@angular/forms';
+import { ClusterComponent } from './cluster/cluster.component';
 
 registerLocaleData(localeZh, 'zh-Hans');
 
@@ -23,6 +25,7 @@ registerLocaleData(localeZh, 'zh-Hans');
 @NgModule({
   declarations: [
     AppComponent,
+    ClusterComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ registerLocaleData(localeZh, 'zh-Hans');
     MatSelectModule,
     MatCardModule,
     MatExpansionModule,
+    FlexLayoutModule,
     AppRoutingModule,
   ],
   providers: [{provide: LOCALE_ID, useValue: 'zh-Hans'}],
