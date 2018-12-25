@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" fixedTopGap="80"
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" fixedTopGap="65"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
@@ -7,64 +7,38 @@
     <!--<mat-toolbar i18n>Menu</mat-toolbar>-->
     <mat-nav-list>
       <mat-accordion>
-        <mat-expansion-panel>
+        <mat-expansion-panel expanded="true">
           <mat-expansion-panel-header>
             <mat-panel-title>
               <mat-icon>account_circle</mat-icon>
             </mat-panel-title>
-            <mat-panel-description i18n>Standard</mat-panel-description>
+            <mat-panel-description i18n>Cluster</mat-panel-description>
           </mat-expansion-panel-header>
           <mat-action-row fxLayoutAlign="start center">
             <button mat-button>
               <mat-icon>account_circle</mat-icon>
-              <a>Add Cluster</a>
+              <a i18n>List</a>
             </button>
           </mat-action-row>
           <mat-action-row fxLayoutAlign="start center">
             <button mat-button>
               <mat-icon>account_circle</mat-icon>
-              <a>Delete Cluster</a>
+              <a i18n>Add</a>
             </button>
           </mat-action-row>
           <mat-action-row fxLayoutAlign="start center">
             <button mat-button>
               <mat-icon>account_circle</mat-icon>
-              <a>List Cluster</a>
+              <a i18n>Change</a>
             </button>
           </mat-action-row>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
+          <mat-action-row fxLayoutAlign="start center">
+            <button mat-button>
               <mat-icon>account_circle</mat-icon>
-            </mat-panel-title>
-            <mat-panel-description i18n>Advanced</mat-panel-description>
-          </mat-expansion-panel-header>
-          <mat-action-row fxLayoutAlign="start center">
-            <mat-icon>account_circle</mat-icon>
-            <button mat-button>first</button>
+              <a i18n>Delete</a>
+            </button>
           </mat-action-row>
           <mat-action-row fxLayoutAlign="start center">
-            <mat-icon>account_circle</mat-icon>
-            <button mat-button>second</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-icon>account_circle</mat-icon>
-            </mat-panel-title>
-            <mat-panel-description i18n>Extended</mat-panel-description>
-          </mat-expansion-panel-header>
-          <mat-action-row fxLayoutAlign="start center">
-            <mat-icon>account_circle</mat-icon>
-            <button mat-button>first</button>
-          </mat-action-row>
-          <mat-action-row fxLayoutAlign="start center">
-            <mat-icon>account_circle</mat-icon>
-            <button mat-button>second</button>
           </mat-action-row>
         </mat-expansion-panel>
       </mat-accordion>
