@@ -14,12 +14,14 @@ import {
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
-import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from '@angular/cdk/layout';
 import {FormsModule} from '@angular/forms';
-import { ClusterComponent } from './cluster/cluster.component';
-import { AddComponent } from './cluster/add/add.component';
-import { DashbordComponent } from './dashbord/dashbord.component';
+import {ClusterComponent} from './cluster/cluster.component';
+import {AddComponent} from './cluster/add/add.component';
+import {DashbordComponent} from './dashbord/dashbord.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {ClusterModule} from './cluster/cluster.module';
+import {ClusterRoutingModule} from './cluster/cluster-routing.module';
 
 registerLocaleData(localeZh, 'zh-Hans');
 
@@ -30,6 +32,7 @@ registerLocaleData(localeZh, 'zh-Hans');
     ClusterComponent,
     AddComponent,
     DashbordComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ registerLocaleData(localeZh, 'zh-Hans');
     MatCardModule,
     MatExpansionModule,
     FlexLayoutModule,
-    AppRoutingModule,
+    ClusterModule,
+    ClusterRoutingModule,
   ],
   providers: [{provide: LOCALE_ID, useValue: 'zh-Hans'}],
   bootstrap: [AppComponent]
