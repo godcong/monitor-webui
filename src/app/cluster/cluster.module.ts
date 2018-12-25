@@ -18,9 +18,14 @@ import {
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
+const PAGES_COMPONENTS = [
+  ClusterComponent,
+];
+
 @NgModule({
-  declarations: [ClusterComponent],
+  declarations: [...PAGES_COMPONENTS],
   imports: [
+    ClusterRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -38,9 +43,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatCardModule,
     MatExpansionModule,
     FlexLayoutModule,
-    ClusterModule,
     CommonModule,
-    ClusterRoutingModule
+
   ]
 })
 export class ClusterModule {
