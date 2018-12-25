@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import localeZh from '@angular/common/locales/zh-Hans';
 import {registerLocaleData} from '@angular/common';
 import {AppComponent} from './app.component';
@@ -18,6 +18,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {FormsModule} from '@angular/forms';
 
 registerLocaleData(localeZh, 'zh-Hans');
+
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ registerLocaleData(localeZh, 'zh-Hans');
     MatExpansionModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'zh-Hans'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -4,6 +4,7 @@
   "main": "dist/main.js",
   "scripts": {
     "electron": "ng build && tsc --p . && electron .",
+    "elei18n": "ng build --i18n-file src/locale/messages.zh-Hans.xlf --i18n-format xlf --i18n-locale zh-Hans && tsc --p . && electron .",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
