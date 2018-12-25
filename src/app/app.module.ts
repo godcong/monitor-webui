@@ -18,6 +18,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from '@angular/cdk/layout';
 import {FormsModule} from '@angular/forms';
 import { ClusterComponent } from './cluster/cluster.component';
+import { AddComponent } from './cluster/add/add.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
 
 registerLocaleData(localeZh, 'zh-Hans');
 
@@ -26,6 +28,8 @@ registerLocaleData(localeZh, 'zh-Hans');
   declarations: [
     AppComponent,
     ClusterComponent,
+    AddComponent,
+    DashbordComponent,
   ],
   imports: [
     BrowserModule,
