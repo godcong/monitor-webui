@@ -1,6 +1,5 @@
 // Modules to control application life and create native browser window
-import {app, BrowserWindow} from 'electron';
-
+import {app, globalShortcut, BrowserWindow} from 'electron';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,10 +11,14 @@ function createWindow() {
   mainWindow = new BrowserWindow({width: 800, height: 600});
   // and load the index.html of the app.
   mainWindow.loadFile('./dist/electron/index.html');
+  mainWindow.setFullScreen(true);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
+  globalShortcut.register('ESC', () => {
+    mainWindow.setFullScreen(false);
+  });
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
