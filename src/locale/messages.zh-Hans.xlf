@@ -3,18 +3,25 @@
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="41aac9cecddc9f345c263d3742192e68e227e413" datatype="html">
-            <source>Menu</source>
-            <target>菜单</target>
-            <context-group purpose="location">
-              <context context-type="sourcefile">app/navbar/navbar.component.html</context>
-              <context context-type="linenumber">6</context>
-            </context-group>
-          </trans-unit>
-           <trans-unit id="65b16d7c9d01f8243241e3c11a5fdc238bf68f9a" datatype="html">
-                 <source>Standard</source>
-                 <target>基础功能</target>
-           </trans-unit>
-
+        <source>Menu</source>
+        <target>菜单</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="55d2c659d583048ef273f0d8b69fd38e2c09a500" datatype="html">
+        <source>Standard</source>
+        <target>基础功能</target>
+      </trans-unit>
+      <trans-unit id="bc2e854e111ecf2bd7db170da5e3c2ed08181d88" datatype="html">
+        <source>Advanced</source>
+        <target>高级设置</target>
+      </trans-unit>
+      <trans-unit id="58a1f276b7148bf31684500131ac0070423f7d6d" datatype="html">
+        <source>Extended</source>
+        <target>升级扩展</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
