@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '**', redirectTo: 'cluster'},
 ];
 const config: ExtraOptions = {
-  useHash: false,
+  useHash: true,
 };
 
 @NgModule({

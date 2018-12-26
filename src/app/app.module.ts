@@ -25,7 +25,7 @@ registerLocaleData(localeZh, 'zh-Hans');
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'zh-Hans'},
-    // {provide: APP_BASE_HREF, useValue: './'},
+    {provide: APP_BASE_HREF, useValue: '/'},
   ],
   bootstrap: [AppComponent]
 })

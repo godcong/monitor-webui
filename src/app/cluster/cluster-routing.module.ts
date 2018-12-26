@@ -14,6 +14,11 @@ const routes: Routes = [
       {path: 'add', component: AddComponent},
       {path: 'list', component: ListComponent},
       {path: 'change', component: ChangeComponent},
+      {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'full'
+      },
       {path: '**', component: PageNotFoundComponent}
     ],
   },
