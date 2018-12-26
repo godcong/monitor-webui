@@ -3,8 +3,7 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
-    <!--role="navigation" mode="side" opened="opened">-->
-    <!--<mat-toolbar i18n>Menu</mat-toolbar>-->
+    <mat-toolbar i18n>Menu</mat-toolbar>
     <mat-nav-list>
       <mat-accordion>
         <mat-expansion-panel expanded="true">
@@ -21,7 +20,7 @@
             </button>
           </mat-action-row>
           <mat-action-row fxLayoutAlign="start center">
-            <button mat-button>
+            <button mat-button routerLink="add">
               <mat-icon>account_circle</mat-icon>
               <a i18n>Add</a>
             </button>
@@ -45,17 +44,46 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-    </div>
+
     <!-- Add Content Here -->
+    <mat-toolbar color="primary">
+      <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </div>
+      <div fxFlex="0 1 auto" fxLayoutAlign="center center">
+        <button mat-button>
+          <mat-icon>account_balance</mat-icon>
+          <a i18n>Cluster</a>
+        </button>
+      </div>
+      <div fxFlex="0 1 auto" fxLayoutAlign="end center">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>dashboard</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span i18n>Change Account</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>message</mat-icon>
+            <span i18n>New Message</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span i18n>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 

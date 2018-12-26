@@ -17,17 +17,18 @@ import {
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {AddComponent} from './add/add.component';
 
 const PAGES_COMPONENTS = [
   ClusterComponent,
+  AddComponent,
 ];
 
 @NgModule({
   declarations: [...PAGES_COMPONENTS],
   imports: [
+    CommonModule,
     ClusterRoutingModule,
-    BrowserModule,
-    BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -43,8 +44,6 @@ const PAGES_COMPONENTS = [
     MatCardModule,
     MatExpansionModule,
     FlexLayoutModule,
-    CommonModule,
-
   ]
 })
 export class ClusterModule {
