@@ -3,6 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {AddComponent} from './add/add.component';
 import {ClusterComponent} from './cluster.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {ListComponent} from './list/list.component';
+import {ChangeComponent} from './change/change.component';
 
 const routes: Routes = [
   {
@@ -10,6 +12,8 @@ const routes: Routes = [
     component: ClusterComponent,
     children: [
       {path: 'add', component: AddComponent},
+      {path: 'list', component: ListComponent},
+      {path: 'change', component: ChangeComponent},
       {path: '**', component: PageNotFoundComponent}
     ],
   },

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "dist/main.js",
   "scripts": {
+    "pack": "electron-packager . ipfs-monitor --win --out ../ipfs-monitor --ignore ./node_modules --arch=x64 --app-version=0.0.1 --electron-version=4.0.0",
     "electron": "ng build && tsc --p . && electron .",
     "electroncn": "ng build --i18n-file src/locale/messages.zh-Hans.xlf --i18n-format xlf --i18n-locale zh-Hans && tsc --p . && electron .",
     "prod": "ng build --prod && tsc --p . && electron .",
@@ -28,8 +29,8 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "asar": "^0.14.6",
     "core-js": "^2.5.4",
-    "electron": "^4.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
@@ -43,6 +44,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "electron": "^4.0.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",

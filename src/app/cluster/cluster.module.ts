@@ -18,14 +18,20 @@ import {
 import {FormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AddComponent} from './add/add.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {ListComponent} from './list/list.component';
+import {ChangeComponent} from './change/change.component';
 
 const PAGES_COMPONENTS = [
   ClusterComponent,
   AddComponent,
+  ListComponent,
+  ChangeComponent,
+  PageNotFoundComponent,
 ];
 
 @NgModule({
-  declarations: [...PAGES_COMPONENTS],
+  declarations: [...PAGES_COMPONENTS, ListComponent, ChangeComponent],
   imports: [
     CommonModule,
     ClusterRoutingModule,
