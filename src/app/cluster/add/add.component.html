@@ -1,4 +1,29 @@
 <mat-card>
-  <a>添加</a>
-  <button>Add</button>
+  <span>添加服务器</span>
 </mat-card>
+
+<mat-card>
+  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
+    <input matInput placeholder="Remote IP Address" required>
+  </mat-form-field>
+  <mat-form-field fxFlex="0 1 auto">
+    <input matInput placeholder="Port" value="7758">
+  </mat-form-field>
+</mat-card>
+<mat-card>
+  <mat-form-field fxFlex="0 1 auto" fxLayoutAlign="start center">
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
+    <input matInput placeholder="Remote IP Address">
+  </mat-form-field>
+</mat-card>
+<mat-card>
+  <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="end center">
+    <button mat-flat-button color="primary">确定</button>
+  </div>
+</mat-card>
+
+
