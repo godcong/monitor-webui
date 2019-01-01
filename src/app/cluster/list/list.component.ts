@@ -15,15 +15,20 @@ export class ListComponent implements OnInit {
   }
 
   getInit() {
-    let data: any;
     this.service.requestInit()
-      .subscribe((v1: []) => {
-        // if (v1.body != null) {
-        console.log(v1["detail"]);
-        // }
+      .subscribe((data: []) => {
+        console.log(data["detail"]);
       });
-
   }
+
+  postInit() {
+    this.service.postInit({
+      "CLUSTER_SECRET": "5c2defbd5ea3f8806cc0aee8cf005219271a30d1be8b3312434fb814f9f9b768",
+    }).subscribe((data: any) => {
+      console.log(data)
+    })
+  }
+
 
   ngOnInit() {
   }
