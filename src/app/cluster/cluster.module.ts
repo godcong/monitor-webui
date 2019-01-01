@@ -7,7 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LayoutModule} from '@angular/cdk/layout';
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatExpansionModule, MatFormFieldControl, MatFormFieldModule,
   MatGridListModule,
   MatIconModule, MatInputModule,
   MatListModule,
@@ -44,6 +44,7 @@ const PAGES_COMPONENTS = [
     MatIconModule,
     MatMenuModule,
     FormsModule,
+    MatCheckboxModule,
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
