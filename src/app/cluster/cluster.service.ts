@@ -7,6 +7,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class ClusterService {
   http: HttpClient;
 
+  setServer(hostip: string) {
+    localStorage.set
+  }
+
   requestInit() {
     return this.http.get("http://localhost:7758/v0/heartbeat");
   }

@@ -1,92 +1,11 @@
-<!--<div class="colorNested box" style="height: auto;">-->
-<!--<div class="wrapper">-->
-<!--<div class="box header">Header</div>-->
-<!--<div class="box" gdArea="sidebar">Sidebar</div>-->
-<!--<div class="box content" style="position: relative;">-->
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+  <mat-sidenav class="sidenav" fixedInViewport="true"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
-    <!--<mat-toolbar i18n>Menu</mat-toolbar>-->
-    <!--<mat-nav-list>-->
-    <!--<mat-accordion>-->
-    <!--<mat-expansion-panel>-->
-    <!--<mat-expansion-panel-header>-->
-    <!--<mat-panel-title>-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--</mat-panel-title>-->
-    <!--<mat-panel-description i18n>Standard</mat-panel-description>-->
-    <!--</mat-expansion-panel-header>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<button mat-button>-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<a>first</a>-->
-    <!--</button>-->
-    <!--</mat-action-row>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<button mat-button>-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<a>first</a>-->
-    <!--</button>-->
-    <!--</mat-action-row>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<button mat-button>-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<a>first</a>-->
-    <!--</button>-->
-    <!--</mat-action-row>-->
-    <!--</mat-expansion-panel>-->
-    <!--<mat-expansion-panel (opened)="panelOpenState = true"-->
-    <!--(closed)="panelOpenState = false">-->
-    <!--<mat-expansion-panel-header>-->
-    <!--<mat-panel-title>-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--</mat-panel-title>-->
-    <!--<mat-panel-description i18n>Advanced</mat-panel-description>-->
-    <!--</mat-expansion-panel-header>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<button mat-button>first</button>-->
-    <!--</mat-action-row>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<button mat-button>second</button>-->
-    <!--</mat-action-row>-->
-    <!--</mat-expansion-panel>-->
-    <!--<mat-expansion-panel (opened)="panelOpenState = true"-->
-    <!--(closed)="panelOpenState = false">-->
-    <!--<mat-expansion-panel-header>-->
-    <!--<mat-panel-title>-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--</mat-panel-title>-->
-    <!--<mat-panel-description i18n>Extended</mat-panel-description>-->
-    <!--</mat-expansion-panel-header>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<button mat-button>first</button>-->
-    <!--</mat-action-row>-->
-    <!--<mat-action-row fxLayoutAlign="start center">-->
-    <!--<mat-icon>account_circle</mat-icon>-->
-    <!--<button mat-button>second</button>-->
-    <!--</mat-action-row>-->
-    <!--</mat-expansion-panel>-->
-    <!--</mat-accordion>-->
-    <!--</mat-nav-list>-->
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <!--<div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">-->
-      <!--<button-->
-      <!--type="button"-->
-      <!--aria-label="Toggle sidenav"-->
-      <!--mat-icon-button-->
-      <!--(click)="drawer.toggle()"-->
-      <!--*ngIf="isHandset$ | async">-->
-      <!--<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
-      <!--</button>-->
-      <!--</div>-->
-
       <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">
         <button mat-button>
           <mat-icon>account_balance</mat-icon>
@@ -121,10 +40,4 @@
   </mat-sidenav-content>
 
 </mat-sidenav-container>
-
-<!--</div>-->
-<!--<div class="box footer">Footer</div>-->
-<!--</div>-->
-<!--</div>-->
-
 
