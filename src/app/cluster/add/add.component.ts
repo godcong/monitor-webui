@@ -18,6 +18,7 @@ export class AddComponent implements OnInit, Encoder {
     Host: '',
     Port: 7758,
   };
+  isClient: boolean;
 
   encode() {
     return {
@@ -59,6 +60,8 @@ export class AddComponent implements OnInit, Encoder {
 
   constructor(service: ClusterService) {
     console.log('const');
+    this.isClient = true;
+    this.form.Host = 'localhost';
     this.service = service;
   }
 
@@ -66,4 +69,10 @@ export class AddComponent implements OnInit, Encoder {
     // this.form.Host = '';
   }
 
+  clientHidden() {
+    if (this.isClient === true) {
+      return 'hidden';
+    }
+    return '';
+  }
 }

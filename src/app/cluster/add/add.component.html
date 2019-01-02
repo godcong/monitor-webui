@@ -15,6 +15,14 @@
 </mat-card>
 
 <mat-card>
+  <mat-label fxFlex="0 1 auto" fxLayoutAlign="start center">RemoteAddress：
+  </mat-label>
+  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
+    <input matInput placeholder="Secret" type="number" [required]="isClient">
+  </mat-form-field>
+</mat-card>
+
+<mat-card>
   <mat-checkbox fxFlex="0 1 auto" fxLayoutAlign="start center">ClusterSecret：</mat-checkbox>
   <mat-form-field fxFlex="0 1 auto" fxFlexFill>
     <input matInput placeholder="Secret" type="number">
