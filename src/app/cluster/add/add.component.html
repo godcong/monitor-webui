@@ -3,14 +3,14 @@
 </mat-card>
 <mat-card>
   <mat-card-title>Test Info:</mat-card-title>
-  <mat-card-content>{{form.Host}}{{form.Port}}</mat-card-content>
+  <mat-card-content>{{form.Host}}:{{form.Port}}</mat-card-content>
 </mat-card>
 <mat-card>
   <mat-form-field fxFlex="0 1 auto" fxFlexFill>
     <input matInput placeholder="Remote IP Address" [(ngModel)]="form.Host" required>
   </mat-form-field>
   <mat-form-field fxFlex="0 1 auto">
-    <input matInput placeholder="Port" [(ngModel)]="form.Port" [value]="form.Port">
+    <input matInput placeholder="Port" type="number" [(ngModel)]="form.Port" [value]="form.Port">
   </mat-form-field>
 </mat-card>
 

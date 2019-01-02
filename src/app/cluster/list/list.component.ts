@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ClusterService} from '../cluster.service';
 import {HttpResponse} from '@angular/common/http';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +10,22 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
   service: ClusterService;
+  clusterList: any[];
 
   constructor(service: ClusterService) {
     this.service = service;
+    this.clusterList = this.getHostList();
+  }
+
+  getHostList() {
+    const hosts = this.service.getHosts();
+    const list = [];
+
+    hosts.forEach(function (v: any) {
+      console.log(v);
+      list.push(v);
+    });
+    return list;
   }
 
   getInit() {
@@ -20,15 +34,6 @@ export class ListComponent implements OnInit {
         console.log(data['detail']);
       });
   }
-
-  postInit() {
-    this.service.postInit({
-      'CLUSTER_SECRET': '5c2defbd5ea3f8806cc0aee8cf005219271a30d1be8b3312434fb814f9f9b768',
-    }).subscribe((data: any) => {
-      console.log(data);
-    });
-  }
-
 
   ngOnInit() {
   }

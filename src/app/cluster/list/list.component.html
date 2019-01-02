@@ -1,12 +1,16 @@
 <mat-card>
   <!--<mat-card-title>添加服务器</mat-card-title>-->
   <mat-card-subtitle>服务器地址信息只会保存在本地</mat-card-subtitle>
-  <button mat-flat-button color="primary" routerLink="../add">Add</button>
+  <button mat-flat-button color="accent" routerLink="../add">Add Host</button>
 </mat-card>
 <mat-list>
   <!--<button (click)="postInit()">请求测试</button>-->
+  <mat-list-item *ngFor="let list of clusterList">
+    <button fxFlex="0 1 auto" mat-flat-button color="warn">Add</button>
+    <span fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="end center">
+       Address:
+    </span>
+    <a>  {{list['name']}}</a>
 
-  <mat-list-item> Pepper</mat-list-item>
-  <mat-list-item> Salt</mat-list-item>
-  <mat-list-item> Paprika</mat-list-item>
+  </mat-list-item>
 </mat-list>
