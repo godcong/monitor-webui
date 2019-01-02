@@ -1,19 +1,23 @@
 <mat-card>
   <span>添加服务器</span>
 </mat-card>
-
+<mat-card>
+  <mat-card-title>Test Info:</mat-card-title>
+  <mat-card-content>{{form.Host}}{{form.Port}}</mat-card-content>
+</mat-card>
 <mat-card>
   <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Remote IP Address" required>
+    <input matInput placeholder="Remote IP Address" [(ngModel)]="form.Host" required>
   </mat-form-field>
   <mat-form-field fxFlex="0 1 auto">
-    <input matInput placeholder="Port" value="7758">
+    <input matInput placeholder="Port" [(ngModel)]="form.Port" [value]="form.Port">
   </mat-form-field>
 </mat-card>
+
 <mat-card>
   <mat-checkbox fxFlex="0 1 auto" fxLayoutAlign="start center">ClusterSecret：</mat-checkbox>
   <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Secret">
+    <input matInput placeholder="Secret" type="number">
   </mat-form-field>
 </mat-card>
 <mat-card>
@@ -34,7 +38,10 @@
   </mat-form-field>
 </mat-card>
 <mat-card>
+  <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">
+    <button mat-flat-button color="primary" routerLink="../list">取消</button>
+  </div>
   <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="end center">
-    <button mat-flat-button color="primary">确定</button>
+    <button mat-flat-button color="primary" (click)="postInit()">确定</button>
   </div>
 </mat-card>

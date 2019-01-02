@@ -1,9 +1,9 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" fixedTopGap="65"
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" fixedTopGap="0"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="!(isHandset$ | async)">
-    <mat-toolbar i18n>Menu</mat-toolbar>
+    <mat-toolbar i18n>Menu </mat-toolbar>
     <mat-nav-list>
       <mat-accordion>
         <mat-expansion-panel expanded="true">
