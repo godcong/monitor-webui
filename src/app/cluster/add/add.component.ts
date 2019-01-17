@@ -61,7 +61,7 @@ export class AddComponent implements OnInit, Encoder {
 
   constructor(service: ClusterService) {
     console.log('const');
-    this.isClient = true;
+    this.isClient = false;
     this.needIPFSPath = false;
     this.form.Host = 'localhost';
     this.service = service;

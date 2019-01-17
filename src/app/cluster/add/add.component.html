@@ -1,66 +1,68 @@
 <mat-card>
-  <span>添加服务器</span>
-</mat-card>
-<mat-card>
-  <mat-card-title>Test Info:</mat-card-title>
-  <mat-card-content>{{form.Host}}:{{form.Port}}</mat-card-content>
-</mat-card>
-<mat-card>
-  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
-    <mat-label>RemoteAddress</mat-label>
-    <input matInput [(ngModel)]="form.Host" required>
-  </mat-form-field>
-  <mat-form-field appearance="outline" fxFlex="0 1 auto">
-    <mat-label>Port</mat-label>
-    <input matInput type="number" [(ngModel)]="form.Port" [value]="form.Port">
-  </mat-form-field>
+  <mat-card-title>添加服务器</mat-card-title>
+  <mat-card-content align="end">{{form.Host}}:{{form.Port}}</mat-card-content>
 </mat-card>
 
-<mat-card>
-  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
-    <mat-label>RemoteAddress</mat-label>
-    <input matInput [required]="isClient">
-    <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
-  </mat-form-field>
-</mat-card>
-
+<div *ngIf="!isClient">
+  <mat-card>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+      <mat-label>RemoteAddress</mat-label>
+      <input matInput [(ngModel)]="form.Host" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto">
+      <mat-label>Port</mat-label>
+      <input matInput type="number" [(ngModel)]="form.Port" [value]="form.Port">
+    </mat-form-field>
+  </mat-card>
+</div>
+<div *ngIf="isClient">
+  <mat-card>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+      <mat-label>ClientAddress</mat-label>
+      <input matInput [required]="isClient">
+      <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
+    </mat-form-field>
+  </mat-card>
+</div>
 <mat-card>
   <!--<mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>-->
   <!--<mat-form-field appearance="outline"  >-->
   <mat-checkbox color="primary" fxFlex="0 1 auto" fxLayoutAlign="start center" labelPosition="before"
-                [(ngModel)]="needIPFSPath" [checked]="needIPFSPath">配置IPFS Init路径
-  </mat-checkbox>
-  <mat-checkbox color="primary" fxFlex="0 1 auto" fxLayoutAlign="start center" labelPosition="before">配置Service Init路径
+                [(ngModel)]="needIPFSPath" [checked]="needIPFSPath">可选参数
   </mat-checkbox>
   <!--</mat-form-field>-->
   <!--</mat-form-field>-->
 </mat-card>
-
-<mat-card>
-  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
-    <mat-label>ClusterSecret:</mat-label>
-    <input matInput type="number">
-    <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
-  </mat-form-field>
-</mat-card>
-<mat-card>
-  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
-    <mat-label>IPFS Path:</mat-label>
-    <input matInput [disabled]="!needIPFSPath">
-    <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
-  </mat-form-field>
-</mat-card>
-<mat-card>
-  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <mat-label>Service Path:</mat-label>
-    <input matInput >
-  </mat-form-field>
-</mat-card>
-<mat-card>
-  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Secret">
-  </mat-form-field>
-</mat-card>
+<div [hidden]="!needIPFSPath">
+  <mat-card>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+      <mat-label>ClusterSecret:</mat-label>
+      <input matInput type="number">
+      <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
+    </mat-form-field>
+  </mat-card>
+  <mat-card>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+      <mat-label>IPFS Path:</mat-label>
+      <input matInput>
+      <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
+    </mat-form-field>
+  </mat-card>
+  <mat-card>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+      <mat-label>Service Path:</mat-label>
+      <input matInput>
+      <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
+    </mat-form-field>
+  </mat-card>
+  <mat-card>
+    <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+      <mat-label>Secret:</mat-label>
+      <input matInput>
+      <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
+    </mat-form-field>
+  </mat-card>
+</div>
 <mat-card>
   <div fxFlex="0 1 auto" fxFlexFill fxLayoutAlign="start center">
     <button mat-flat-button color="primary" routerLink="../list">取消</button>
@@ -69,3 +71,4 @@
     <button mat-flat-button color="primary" (click)="postInit()">确定</button>
   </div>
 </mat-card>
+
