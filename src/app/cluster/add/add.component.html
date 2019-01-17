@@ -6,38 +6,54 @@
   <mat-card-content>{{form.Host}}:{{form.Port}}</mat-card-content>
 </mat-card>
 <mat-card>
-  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Remote IP Address" [(ngModel)]="form.Host" required>
+  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+    <mat-label>RemoteAddress</mat-label>
+    <input matInput [(ngModel)]="form.Host" required>
   </mat-form-field>
-  <mat-form-field fxFlex="0 1 auto">
-    <input matInput placeholder="Port" type="number" [(ngModel)]="form.Port" [value]="form.Port">
-  </mat-form-field>
-</mat-card>
-
-<mat-card>
-  <mat-label fxFlex="0 1 auto" fxLayoutAlign="start center">RemoteAddress：
-  </mat-label>
-  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Secret" type="number" [required]="isClient">
+  <mat-form-field appearance="outline" fxFlex="0 1 auto">
+    <mat-label>Port</mat-label>
+    <input matInput type="number" [(ngModel)]="form.Port" [value]="form.Port">
   </mat-form-field>
 </mat-card>
 
 <mat-card>
-  <mat-checkbox fxFlex="0 1 auto" fxLayoutAlign="start center">ClusterSecret：</mat-checkbox>
-  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Secret" type="number">
+  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+    <mat-label>RemoteAddress</mat-label>
+    <input matInput [required]="isClient">
+    <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
+  </mat-form-field>
+</mat-card>
+
+<mat-card>
+  <!--<mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>-->
+  <!--<mat-form-field appearance="outline"  >-->
+  <mat-checkbox color="primary" fxFlex="0 1 auto" fxLayoutAlign="start center" labelPosition="before"
+                [(ngModel)]="needIPFSPath" [checked]="needIPFSPath">配置IPFS Init路径
+  </mat-checkbox>
+  <mat-checkbox color="primary" fxFlex="0 1 auto" fxLayoutAlign="start center" labelPosition="before">配置Service Init路径
+  </mat-checkbox>
+  <!--</mat-form-field>-->
+  <!--</mat-form-field>-->
+</mat-card>
+
+<mat-card>
+  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+    <mat-label>ClusterSecret:</mat-label>
+    <input matInput type="number">
+    <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
   </mat-form-field>
 </mat-card>
 <mat-card>
-  <mat-checkbox fxFlex="0 1 auto" fxLayoutAlign="start center">IpfsPath：</mat-checkbox>
-  <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Path">
+  <mat-form-field appearance="outline" fxFlex="0 1 auto" fxFlexFill>
+    <mat-label>IPFS Path:</mat-label>
+    <input matInput [disabled]="!needIPFSPath">
+    <mat-hint align="end">这里有一行小标题,你有没有看到,这个就是说明!</mat-hint>
   </mat-form-field>
 </mat-card>
 <mat-card>
-  <mat-checkbox fxFlex="0 1 auto" fxLayoutAlign="start center">ServicePath：</mat-checkbox>
   <mat-form-field fxFlex="0 1 auto" fxFlexFill>
-    <input matInput placeholder="Path">
+    <mat-label>Service Path:</mat-label>
+    <input matInput >
   </mat-form-field>
 </mat-card>
 <mat-card>

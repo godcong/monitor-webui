@@ -19,6 +19,7 @@ export class AddComponent implements OnInit, Encoder {
     Port: 7758,
   };
   isClient: boolean;
+  needIPFSPath: boolean;
 
   encode() {
     return {
@@ -38,7 +39,7 @@ export class AddComponent implements OnInit, Encoder {
   postInit() {
     this.service.postInit(this.host(), {
       'CLUSTER_SECRET': '5c2defbd5ea3f8806cc0aee8cf005219271a30d1be8b3312434fb814f9f9b768',
-    }).subscribe((data: IpfsResponse) => {
+    }).subscribe((data: any) => {
       console.log(data);
       // if (data.Code === 0) {
       // let hosts: InitForm[];
@@ -53,7 +54,7 @@ export class AddComponent implements OnInit, Encoder {
 
   getInit() {
     this.service.requestInit()
-      .subscribe((data: IpfsResponse) => {
+      .subscribe((data: any) => {
         console.log(data);
       });
   }
@@ -61,6 +62,7 @@ export class AddComponent implements OnInit, Encoder {
   constructor(service: ClusterService) {
     console.log('const');
     this.isClient = true;
+    this.needIPFSPath = false;
     this.form.Host = 'localhost';
     this.service = service;
   }
